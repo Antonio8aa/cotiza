@@ -334,14 +334,8 @@ export async function getCotizacionById(id: number, usuarioId?: number): Promise
 
 // Actualizar estado de cotización
 export async function updateCotizacionEstado(id: number, estado: string): Promise<boolean> {
-  // We need to check if the query executed successfully, not the result length
-  try {
-    await executeQuery("UPDATE cotizaciones SET estado = @estado WHERE id = @id", { id, estado })
-    return true
-  } catch (error) {
-    console.error("[updateCotizacionEstado] Error updating estado:", error)
-    return false
-  }
+  const result = await executeQuery("UPDATE cotizaciones SET estado = @estado WHERE id = @id", { id, estado })
+  return result.length > 0
 }
 
 // Obtener configuraciones para cotizaciones

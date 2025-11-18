@@ -2,10 +2,10 @@
 import sql from "mssql"
 
 const config: sql.config = {
-  server: process.env.SQL_SERVER_HOST || "ANTONIO",
+  server: process.env.SQL_SERVER_HOST || "ALMACEN",
   database: process.env.SQL_SERVER_DATABASE || "GrupoLiteCotizacione",
   user: process.env.SQL_SERVER_USER || "sa",
-  password: process.env.SQL_SERVER_PASSWORD || "h9cmhlci",
+  password: process.env.SQL_SERVER_PASSWORD || "12345678",
   options: {
     encrypt: process.env.NODE_ENV === "production", // Usar SSL en producción
     trustServerCertificate: true, // Para desarrollo local
